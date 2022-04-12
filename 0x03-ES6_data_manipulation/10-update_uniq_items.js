@@ -1,5 +1,5 @@
 export default function updateUniqueItems(map) {
-  if (!(map instanceof Map)) throw new Error('Cannot procee');
+  if (!(map instanceof Map)) throw new Error('Cannot process');
 
   map.forEach((key, value) => {
     if (value === 1) {
