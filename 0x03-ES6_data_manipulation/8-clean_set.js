@@ -1,5 +1,6 @@
 export default function cleanSet(set, startString) {
-  return '-'.join(Array.from(set)
+  return Array.from(set)
     .filter((entry) => entry.startsWith(startString))
-    .map((item) => item.replace(startString), ''));
+    .map((item) => item.replace(startString, ''))
+    .join('-');
 }
