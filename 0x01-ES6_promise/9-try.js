@@ -3,9 +3,9 @@ export default function guardrail(mathFunction) {
   let value;
 
   try {
-    value = mathFunction()
+    value = mathFunction();
   } catch (error) {
-    value = err.toString();
+    value = error.toString();
   } finally {
     queue.push(value);
     queue.push('Guardrail was processed');
