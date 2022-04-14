@@ -7,3 +7,6 @@ interface Teacher {
     contract?: boolean,
 };
 
+interface Directors extends Teacher {
+    numberOfReports: number
+};
