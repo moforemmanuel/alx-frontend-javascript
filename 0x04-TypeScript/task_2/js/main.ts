@@ -39,4 +39,28 @@ function createEmployee(salary: number | string): Director | Teacher {
     return instance;
 }
 
-console.log(createEmployee(200));
+// console.log(createEmployee(200));
+
+
+function isDirector(employee: Teacher | Director): boolean {
+    return employee instanceof Director ? true : false;
+}
+
+function executeWork(employee: Teacher | Director): string {
+    let message;
+    if (employee instanceof Director) {
+        message = employee.workDirectorTasks();
+    } else if (employee instanceof Teacher) {
+        message = employee.workTeacherTasks();
+    } else {
+        message = 'Unknown Employee';
+    }
+
+    return message;
+}
+
+type Subjects = 'Math' | 'History';
+
+function teachClass (todayClass: Subjects): string {
+    return todayClass === 'Math' ? 'Teaching Math' : 'Teaching History';
+}
